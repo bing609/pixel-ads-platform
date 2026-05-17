@@ -1,0 +1,50 @@
+{
+  "name": "pixel-ads-platform",
+  "version": "1.0.0",
+  "description": "Full-stack web application for grid-based pixel advertising platform",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon --exec node --experimental-modules server/index.js",
+    "client:dev": "cd client && npm run dev",
+    "server:start": "node server/index.js",
+    "client:build": "cd client && npm run build",
+    "build": "npm run client:build",
+    "db:migrate": "node --experimental-modules server/database/migrate.js",
+    "db:seed": "node --experimental-modules server/database/seed.js",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "pixel-ads",
+    "grid",
+    "payment",
+    "PayPal"
+  ],
+  "author": "bing609",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.7.0",
+    "pg": "^8.11.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "axios": "^1.4.0",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.0",
+    "cloudinary": "^1.33.0",
+    "redis": "^4.6.5",
+    "crypto": "^1.0.1",
+    "express-validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.0",
+    "jest": "^29.5.0",
+    "eslint": "^8.40.0"
+  }
+}
